@@ -1,0 +1,762 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* EcoLearn Design System - Environmental Education Platform */
+
+@layer base {
+  :root {
+    /* Enhanced environmental color palette for student appeal */
+    --background: 120 30% 98%;
+    --foreground: 140 85% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 140 85% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 140 85% 8%;
+
+    /* Enhanced primary green - more vibrant and engaging */
+    --primary: 142 78% 38%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 142 68% 58%;
+    --primary-light: 142 45% 92%;
+    --primary-dark: 142 85% 25%;
+
+    /* Enhanced secondary earth tones */
+    --secondary: 35 50% 88%;
+    --secondary-foreground: 140 85% 8%;
+
+    --muted: 120 25% 96%;
+    --muted-foreground: 140 25% 45%;
+
+    /* Enhanced accent sky blue for water themes */
+    --accent: 200 92% 75%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 200 60% 92%;
+
+    /* Success green for achievements - more vibrant */
+    --success: 142 78% 42%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning amber for challenges - more energetic */
+    --warning: 45 95% 65%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Additional student-friendly colors */
+    --fun-blue: 210 85% 65%;
+    --fun-purple: 270 75% 70%;
+    --fun-pink: 320 75% 70%;
+    --fun-orange: 25 95% 65%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 120 25% 92%;
+    --input: 120 25% 97%;
+    --ring: 142 78% 38%;
+
+    --radius: 0.875rem;
+
+    /* Enhanced environmental gradients for student appeal */
+    --gradient-eco: linear-gradient(
+      135deg,
+      hsl(var(--primary)),
+      hsl(var(--primary-glow))
+    );
+    --gradient-earth: linear-gradient(
+      135deg,
+      hsl(var(--primary)),
+      hsl(var(--warning))
+    );
+    --gradient-water: linear-gradient(
+      135deg,
+      hsl(var(--accent)),
+      hsl(var(--primary-glow))
+    );
+    --gradient-forest: linear-gradient(
+      135deg,
+      hsl(142 85% 25%),
+      hsl(var(--primary))
+    );
+    /* New student-friendly gradients */
+    --gradient-fun: linear-gradient(
+      135deg,
+      hsl(var(--fun-blue)),
+      hsl(var(--fun-purple))
+    );
+    --gradient-energy: linear-gradient(
+      135deg,
+      hsl(var(--fun-orange)),
+      hsl(var(--warning))
+    );
+    --gradient-magic: linear-gradient(
+      135deg,
+      hsl(var(--fun-pink)),
+      hsl(var(--fun-purple))
+    );
+    --gradient-sky: linear-gradient(
+      135deg,
+      hsl(var(--accent-light)),
+      hsl(var(--accent))
+    );
+
+    /* Enhanced shadows with eco theme */
+    --shadow-eco: 0 10px 30px -10px hsl(var(--primary) / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.2);
+    --shadow-card: 0 4px 20px hsl(var(--primary) / 0.1);
+    --shadow-fun: 0 8px 25px -8px hsl(var(--fun-blue) / 0.25);
+    --shadow-magic: 0 12px 35px -10px hsl(var(--fun-purple) / 0.3);
+    --shadow-energy: 0 6px 20px -6px hsl(var(--fun-orange) / 0.3);
+
+    /* Enhanced animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-elastic: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .dark {
+    /* Dark mode environmental colors */
+    --background: 140 25% 6%;
+    --foreground: 120 15% 95%;
+
+    --card: 140 20% 8%;
+    --card-foreground: 120 15% 95%;
+
+    --primary: 142 65% 55%;
+    --primary-foreground: 140 85% 8%;
+    --primary-glow: 142 75% 65%;
+
+    --secondary: 35 25% 15%;
+    --secondary-foreground: 120 15% 95%;
+
+    --muted: 140 15% 12%;
+    --muted-foreground: 140 15% 60%;
+
+    --accent: 200 75% 60%;
+    --accent-foreground: 140 85% 8%;
+
+    --border: 140 15% 18%;
+    --input: 140 15% 15%;
+    --ring: 142 65% 55%;
+  }
+
+  /* Hide scrollbars while preserving scroll (cross-browser) */
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply text-foreground font-sans;
+    /* Ultra-colorful and attractive background with multiple effects */
+    background: 
+      /* Base colorful gradient */ linear-gradient(
+        135deg,
+        hsl(var(--fun-blue) / 0.15) 0%,
+        hsl(var(--primary-light) / 0.12) 25%,
+        hsl(var(--fun-purple) / 0.15) 50%,
+        hsl(var(--accent-light) / 0.12) 75%,
+        hsl(var(--fun-pink) / 0.15) 100%
+      ),
+      /* Main atmospheric layers */
+        radial-gradient(
+          1400px 600px at -20% -20%,
+          hsl(var(--accent-light) / 0.25),
+          transparent 70%
+        ),
+      radial-gradient(
+        1200px 500px at 120% 20%,
+        hsl(var(--primary-glow) / 0.22),
+        transparent 70%
+      ),
+      radial-gradient(
+        1000px 450px at 50% 120%,
+        hsl(var(--primary) / 0.18),
+        transparent 70%
+      ),
+      /* Fun color accents - more vibrant */
+        radial-gradient(
+          800px 400px at 15% 75%,
+          hsl(var(--fun-blue) / 0.15),
+          transparent 65%
+        ),
+      radial-gradient(
+        700px 350px at 85% 25%,
+        hsl(var(--fun-purple) / 0.12),
+        transparent 65%
+      ),
+      /* Additional depth layers - more colorful */
+        radial-gradient(
+          600px 300px at 75% 80%,
+          hsl(var(--fun-pink) / 0.1),
+          transparent 60%
+        ),
+      radial-gradient(
+        500px 250px at 25% 30%,
+        hsl(var(--fun-orange) / 0.12),
+        transparent 60%
+      ),
+      /* More colorful wave-like patterns */
+        conic-gradient(
+          from 0deg at 30% 40%,
+          hsl(var(--fun-blue) / 0.08) 0deg,
+          transparent 60deg,
+          hsl(var(--fun-purple) / 0.08) 120deg,
+          transparent 180deg,
+          hsl(var(--primary) / 0.08) 240deg,
+          transparent 300deg,
+          hsl(var(--fun-blue) / 0.08) 360deg
+        ),
+      /* Enhanced overlay gradient */
+        linear-gradient(
+          135deg,
+          hsl(var(--primary-light) / 0.08) 0%,
+          transparent 30%,
+          hsl(var(--accent-light) / 0.06) 70%,
+          transparent 100%
+        ),
+      /* Additional colorful overlay */
+        linear-gradient(
+          45deg,
+          hsl(var(--fun-pink) / 0.05) 0%,
+          hsl(var(--fun-orange) / 0.05) 50%,
+          hsl(var(--fun-blue) / 0.05) 100%
+        );
+  }
+}
+
+@layer components {
+  /* Enhanced eco button variants for student appeal */
+  .btn-eco {
+    @apply bg-gradient-to-r from-primary to-primary-glow text-primary-foreground;
+    @apply rounded-xl px-6 py-3 font-semibold transition-all duration-300;
+    @apply hover:scale-105 hover:shadow-eco active:scale-95;
+    @apply relative overflow-hidden;
+  }
+
+  .btn-eco::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: left 0.5s;
+  }
+
+  .btn-eco:hover::before {
+    left: 100%;
+  }
+
+  .btn-earth {
+    @apply bg-gradient-to-r from-warning to-primary text-primary-foreground;
+    @apply rounded-xl px-6 py-3 font-semibold transition-all duration-300;
+    @apply hover:scale-105 hover:shadow-glow active:scale-95;
+  }
+
+  .btn-fun {
+    @apply bg-gradient-to-r from-fun-blue to-fun-purple text-white;
+    @apply rounded-xl px-6 py-3 font-semibold transition-all duration-300;
+    @apply hover:scale-105 hover:shadow-fun active:scale-95;
+  }
+
+  .btn-energy {
+    @apply bg-gradient-to-r from-fun-orange to-warning text-white;
+    @apply rounded-xl px-6 py-3 font-semibold transition-all duration-300;
+    @apply hover:scale-105 hover:shadow-energy active:scale-95;
+  }
+
+  .btn-magic {
+    @apply bg-gradient-to-r from-fun-pink to-fun-purple text-white;
+    @apply rounded-xl px-6 py-3 font-semibold transition-all duration-300;
+    @apply hover:scale-105 hover:shadow-magic active:scale-95;
+  }
+
+  /* Progress bars */
+  .progress-eco {
+    @apply bg-muted rounded-full h-3 overflow-hidden;
+  }
+
+  .progress-fill {
+    @apply bg-gradient-to-r from-primary to-primary-glow h-full rounded-full;
+    @apply transition-all duration-500 ease-out;
+  }
+
+  /* Enhanced Cards */
+  .card-eco {
+    @apply border border-border rounded-2xl p-6;
+    @apply shadow-card hover:shadow-eco transition-all duration-300;
+    @apply hover:scale-[1.02] hover:-translate-y-1;
+    @apply backdrop-blur-sm bg-gradient-to-br from-white/95 via-fun-blue-50 to-fun-purple-50;
+  }
+
+  .card-fun {
+    @apply bg-gradient-to-br from-fun-blue-100 to-fun-purple-200 border border-fun-blue-300 rounded-2xl p-6;
+    @apply shadow-fun hover:shadow-magic transition-all duration-300;
+    @apply hover:scale-[1.02] hover:-translate-y-1 backdrop-blur-sm;
+  }
+
+  .card-energy {
+    @apply bg-gradient-to-br from-fun-orange-100 to-warning-200 border border-fun-orange-300 rounded-2xl p-6;
+    @apply shadow-energy hover:shadow-glow transition-all duration-300;
+    @apply hover:scale-[1.02] hover:-translate-y-1 backdrop-blur-sm;
+  }
+
+  .card-magic {
+    @apply bg-gradient-to-br from-fun-pink-100 to-fun-purple-200 border border-fun-purple-300 rounded-2xl p-6;
+    @apply shadow-magic hover:shadow-fun transition-all duration-300;
+    @apply hover:scale-[1.02] hover:-translate-y-1 backdrop-blur-sm;
+  }
+
+  /* Enhanced Badges */
+  .badge-eco {
+    @apply bg-gradient-to-r from-primary to-primary-glow text-primary-foreground;
+    @apply px-3 py-1 rounded-full text-sm font-semibold;
+    @apply shadow-sm;
+  }
+
+  .badge-water {
+    @apply bg-gradient-to-r from-accent to-primary-glow text-accent-foreground;
+    @apply px-3 py-1 rounded-full text-sm font-semibold;
+  }
+
+  .badge-fun {
+    @apply bg-gradient-to-r from-fun-blue to-fun-purple text-white;
+    @apply px-3 py-1 rounded-full text-sm font-semibold shadow-fun;
+  }
+
+  .badge-energy {
+    @apply bg-gradient-to-r from-fun-orange to-warning text-white;
+    @apply px-3 py-1 rounded-full text-sm font-semibold shadow-energy;
+  }
+
+  .badge-magic {
+    @apply bg-gradient-to-r from-fun-pink to-fun-purple text-white;
+    @apply px-3 py-1 rounded-full text-sm font-semibold shadow-magic;
+  }
+
+  /* Enhanced Animations for student engagement */
+  .animate-bounce-gentle {
+    animation: bounce-gentle 2s infinite;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .animate-wiggle {
+    animation: wiggle 1s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-slower {
+    animation: pulse-slower 4s ease-in-out infinite;
+  }
+
+  .animate-pulse-slowest {
+    animation: pulse-slowest 5s ease-in-out infinite;
+  }
+
+  .animate-sparkle {
+    animation: sparkle 2s ease-in-out infinite;
+  }
+
+  .animate-rainbow {
+    animation: rainbow 3s ease-in-out infinite;
+  }
+
+  .animate-drift {
+    animation: drift 8s ease-in-out infinite;
+  }
+
+  .animate-swirl {
+    animation: swirl 12s linear infinite;
+  }
+
+  .animate-breathe {
+    animation: breathe 4s ease-in-out infinite;
+  }
+
+  .animate-ripple {
+    animation: ripple 6s ease-in-out infinite;
+  }
+
+  .animate-morph {
+    animation: morph 10s ease-in-out infinite;
+  }
+
+  /* Colorful background effects */
+  .bg-rainbow-shift {
+    background: linear-gradient(
+      45deg,
+      hsl(var(--fun-blue) / 0.1),
+      hsl(var(--fun-purple) / 0.1),
+      hsl(var(--fun-pink) / 0.1),
+      hsl(var(--fun-orange) / 0.1),
+      hsl(var(--primary) / 0.1),
+      hsl(var(--accent) / 0.1)
+    );
+    background-size: 400% 400%;
+    animation: rainbow-shift 8s ease-in-out infinite;
+  }
+
+  .bg-colorful-pattern {
+    background-image: radial-gradient(
+        circle at 20% 80%,
+        hsl(var(--fun-blue) / 0.1) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 80% 20%,
+        hsl(var(--fun-purple) / 0.1) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 40% 40%,
+        hsl(var(--fun-pink) / 0.1) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 60% 60%,
+        hsl(var(--fun-orange) / 0.1) 0%,
+        transparent 50%
+      );
+  }
+}
+
+@layer utilities {
+  .text-gradient-eco {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary)),
+      hsl(var(--primary-glow))
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-water {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--accent)),
+      hsl(var(--primary-glow))
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-fun {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--fun-blue)),
+      hsl(var(--fun-purple))
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-energy {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--fun-orange)),
+      hsl(var(--warning))
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-magic {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--fun-pink)),
+      hsl(var(--fun-purple))
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-rainbow {
+    background: linear-gradient(
+      45deg,
+      hsl(var(--fun-pink)),
+      hsl(var(--fun-purple)),
+      hsl(var(--fun-blue)),
+      hsl(var(--primary)),
+      hsl(var(--fun-orange))
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@keyframes bounce-gentle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  to {
+    box-shadow: 0 0 30px hsl(var(--primary-glow) / 0.5);
+  }
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+}
+
+@keyframes pulse-slow {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes pulse-slower {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes pulse-slowest {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    opacity: 0.8;
+    transform: scale(1.1) rotate(90deg);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2) rotate(180deg);
+  }
+  75% {
+    opacity: 0.8;
+    transform: scale(1.1) rotate(270deg);
+  }
+}
+
+@keyframes rainbow {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(20px, -15px) rotate(5deg);
+  }
+  50% {
+    transform: translate(-10px, -25px) rotate(-3deg);
+  }
+  75% {
+    transform: translate(-20px, -10px) rotate(2deg);
+  }
+}
+
+@keyframes swirl {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+@keyframes morph {
+  0%,
+  100% {
+    border-radius: 50% 50% 50% 50%;
+    transform: rotate(0deg);
+  }
+  25% {
+    border-radius: 60% 40% 60% 40%;
+    transform: rotate(90deg);
+  }
+  50% {
+    border-radius: 40% 60% 40% 60%;
+    transform: rotate(180deg);
+  }
+  75% {
+    border-radius: 50% 50% 60% 40%;
+    transform: rotate(270deg);
+  }
+}
+
+@keyframes rainbow-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* GreenCoins specific animations */
+@keyframes coin-earn {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@keyframes coin-sparkle {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.1) rotate(90deg);
+  }
+  50% {
+    transform: scale(1.05) rotate(180deg);
+  }
+  75% {
+    transform: scale(1.1) rotate(270deg);
+  }
+}
+
+.animate-coin-earn {
+  animation: coin-earn 0.6s ease-out;
+}
+
+.animate-coin-sparkle {
+  animation: coin-sparkle 2s ease-in-out infinite;
+}
+
+.coin-balance-update {
+  transition: all 0.3s ease;
+}
+
+.coin-balance-update.earning {
+  transform: scale(1.1);
+  color: hsl(var(--warning));
+}
